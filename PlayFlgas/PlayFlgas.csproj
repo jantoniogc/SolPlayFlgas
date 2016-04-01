@@ -155,6 +155,9 @@
     <Resource Include="hqdefault.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DDBB\paises.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="paises.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
