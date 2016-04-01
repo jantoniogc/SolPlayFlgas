@@ -25,6 +25,19 @@ namespace PlayFlgas
             InitializeComponent();            
         }
 
-        
+        private void PlayFlags_Loaded(object sender, RoutedEventArgs e)
+        {
+            PlayFlgas.paisesDataSet paisesDataSet = ((PlayFlgas.paisesDataSet)(this.FindResource("paisesDataSet")));
+            // Cargar datos en la tabla paises. Puede modificar este código según sea necesario.
+            PlayFlgas.paisesDataSetTableAdapters.paisesTableAdapter paisesDataSetpaisesTableAdapter = new PlayFlgas.paisesDataSetTableAdapters.paisesTableAdapter();
+            paisesDataSetpaisesTableAdapter.Fill(paisesDataSet.paises);
+            System.Windows.Data.CollectionViewSource paisesViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("paisesViewSource")));
+            paisesViewSource.View.MoveCurrentToFirst();
+            // Cargar datos en la tabla idiomas. Puede modificar este código según sea necesario.
+            PlayFlgas.paisesDataSetTableAdapters.idiomasTableAdapter paisesDataSetidiomasTableAdapter = new PlayFlgas.paisesDataSetTableAdapters.idiomasTableAdapter();
+            paisesDataSetidiomasTableAdapter.Fill(paisesDataSet.idiomas);
+            System.Windows.Data.CollectionViewSource idiomasViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("idiomasViewSource")));
+            idiomasViewSource.View.MoveCurrentToFirst();
+        }
     }
 }

@@ -93,6 +93,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="paisesDataSet.cs">
+      <DependentUpon>paisesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="paisesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>paisesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -111,6 +119,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="paisesDataSet.xsc">
+      <DependentUpon>paisesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="paisesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>paisesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="paisesDataSet.xss">
+      <DependentUpon>paisesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,6 +153,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="hqdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="paises.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlayFlgas"
         mc:Ignorable="d"
-        Title="Play Flags" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+        Title="Play Flags" Height="350" Width="525" WindowStartupLocation="CenterScreen" Loaded="PlayFlags_Loaded">
 
-    <Grid x:Name="grdPrincipal">
+    <Window.Resources>
+        <local:paisesDataSet x:Key="paisesDataSet"/>
+        <CollectionViewSource x:Key="paisesViewSource" Source="{Binding paises, Source={StaticResource paisesDataSet}}"/>
+        <CollectionViewSource x:Key="idiomasViewSource" Source="{Binding idiomas, Source={StaticResource paisesDataSet}}"/>
+    </Window.Resources>
+
+    <Grid x:Name="grdPrincipal" DataContext="{StaticResource paisesViewSource}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -48,12 +54,15 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <!-- Expense type and Amount table -->
-            <DataGrid Grid.Row="0" Margin="0,0,0,0" ColumnHeaderStyle="{StaticResource columnHeaderStyle}" AutoGenerateColumns="False" RowHeaderWidth="0">
+            <DataGrid x:Name="idiomasDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource paisesViewSource}}"  RowDetailsVisibilityMode="VisibleWhenSelected" header>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Bandera"  />
+                    <DataGridTextColumn x:Name="idpaisColumn" Binding="{Binding idpais}" Header="Pais" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="idiomaColumn" Binding="{Binding idioma}" Header="idioma" Width="SizeToHeader"/>
                 </DataGrid.Columns>
             </DataGrid>
+
         </Grid>
         <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource buttonStyle}">Next Custions...</Button>
+        
     </Grid>
 </Window>

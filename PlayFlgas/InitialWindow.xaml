@@ -16,6 +16,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="hqdefault.jpg"/>
@@ -26,5 +27,6 @@
         <Button Grid.Column="0" Grid.Row="1" x:Name="btconfig" Content="Configuración" Margin="5" />
         <Button Grid.Column="0" Grid.Row="2" x:Name="btresult" Content="Resultados" Margin="5" />
         <Button Grid.Column="0" Grid.Row="3" x:Name="bthelp" Content="Ayuda" Margin="5" />
+        <Button Grid.Column="0" Grid.Row="4" x:Name="btexit" Content="Salir" Margin="5" />
     </Grid>
 </Window>
