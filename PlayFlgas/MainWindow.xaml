@@ -1,0 +1,59 @@
+﻿<Window x:Name="PlayFlags" x:Class="PlayFlgas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlayFlgas"
+        mc:Ignorable="d"
+        Title="Play Flags" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+
+    <Grid x:Name="grdPrincipal">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="hqdefault.jpg"/>
+        </Grid.Background>
+        <Menu Grid.Row="0" x:Name="menu" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="26" Margin="0,0,0,0">
+            <MenuItem Header="Jugar" Height="26" Width="50">
+                <MenuItem Header="Competición" HorizontalAlignment="Left" Width="182" Margin="0,0,0,0" />
+                <MenuItem Header="Entrenamiento" HorizontalAlignment="Left" Width="182" Margin="0,0,0,0"/>
+                <MenuItem Header="Salir" HorizontalAlignment="Left" Width="182" Margin="0,0,0,0"/>
+            </MenuItem>
+            <MenuItem Header="Configuración">
+                <MenuItem Header="MenuItem" HorizontalAlignment="Left" Width="145"/>
+                <MenuItem Header="MenuItem" HorizontalAlignment="Left" Width="145"/>
+            </MenuItem>
+            <MenuItem Header="Resultados">
+                <MenuItem Header="Ver Resultados" HorizontalAlignment="Left" Width="145"/>
+            </MenuItem>
+            <MenuItem Header="Ayuda">
+                <MenuItem Header="Ver la Ayuda" HorizontalAlignment="Left" Width="145"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Row="1" Grid.Column="0"  Orientation="Horizontal">
+            <Label  Style="{StaticResource headerTextStyle}">
+                El pais :
+            </Label>
+            <Label Margin="0,0,0,5" FontWeight="Bold"></Label>
+        </StackPanel>
+        <Grid Grid.Column="1" Grid.Row="1" Height="37" VerticalAlignment="Top" HorizontalAlignment="Right" Width="259" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!-- Expense type and Amount table -->
+            <DataGrid Grid.Row="0" Margin="0,0,0,0" ColumnHeaderStyle="{StaticResource columnHeaderStyle}" AutoGenerateColumns="False" RowHeaderWidth="0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Bandera"  />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource buttonStyle}">Next Custions...</Button>
+    </Grid>
+</Window>
