@@ -1,0 +1,30 @@
+﻿<Window x:Class="PlayFlgas.InitialWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlayFlgas" 
+        mc:Ignorable="d"
+        Title="Play" ResizeMode="NoResize" VerticalAlignment="Top" HorizontalAlignment="Left" Width="279.332" Height="202.705" WindowStartupLocation="CenterOwner">
+    
+    <Grid Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="hqdefault.jpg"/>
+        </Grid.Background>
+
+
+        <Button Grid.Column="0" Grid.Row="0" x:Name="btjugar" Content="Jugar" Margin="5" Click="btjugar_Click" />
+        <Button Grid.Column="0" Grid.Row="1" x:Name="btconfig" Content="Configuración" Margin="5" />
+        <Button Grid.Column="0" Grid.Row="2" x:Name="btresult" Content="Resultados" Margin="5" />
+        <Button Grid.Column="0" Grid.Row="3" x:Name="bthelp" Content="Ayuda" Margin="5" />
+    </Grid>
+</Window>
